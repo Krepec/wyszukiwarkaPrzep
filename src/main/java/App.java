@@ -7,20 +7,24 @@ import java.util.Scanner;
  */
 public class App {
 
-    public static void main(String[] args){
-/*
+    public static void main(String[] args) {
 
+        List<String> listOfProducts = new ArrayList<String>();
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj nazwę produktu: ");
-        String product = input.nextLine();
-*/
+        String product = "";
+        while (!product.equals("end")) {
+            System.out.println("Podaj nazwę kolejnego produktu, jezeli chcesz zakonczyć wpisz: end ");
+            product = input.nextLine();
+            listOfProducts.add(product);
+            listOfProducts.remove("end");
+        }
 
+        System.out.println(listOfProducts);
+        RecipeRegistry recipeRegistry = new RecipeRegistry();
 
-RecipeRegistry recipeRegistry = new RecipeRegistry();
-        List<String> list = new ArrayList<String>();
-        list.add("szynka");
-        list.add("pieczarki");
+     /*   listOfProducts.add("szynka");
+        listOfProducts.add("pieczarki");*/
 
-        System.out.println(recipeRegistry.searchRecipe(list));
+        System.out.println(recipeRegistry.searchRecipe(listOfProducts));
     }
 }

@@ -20,7 +20,6 @@ public class RecipeRegistry {
         szarlotka.add("margaryna");
         szarlotka.add("cukier");
 
-        recipes.put(pizza, "pizza");
         recipes.put(szarlotka, "szarlotka");
     }
 
